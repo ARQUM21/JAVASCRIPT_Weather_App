@@ -1,0 +1,204 @@
+/* ===== BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --secondary-color: #ecf0f1;
+    --accent-color: #c3eaf4;
+    --text-color: #333;
+    --white: #fff;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    color: var(--text-color);
+    line-height: 1.6;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url(https://cdn.pixabay.com/photo/2021/03/11/02/57/mountain-6086083_1280.jpg) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ===== WEATHER APP CONTAINER ===== */
+.weather-app {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 420px;     border-radius: 18px;
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(5px); 
+    transition: var(--transition);
+}
+
+/* ===== SEARCH FORM ===== */
+.search-form {
+    display: flex;
+    gap: 12px; 
+}
+
+.city-input {
+    flex: 1;
+    padding: 16px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.city-input:focus {
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+.search-btn {
+    background-color: var(--primary-color); 
+    border: none;
+    padding: 0 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure the material icon is white */
+.search-btn .material-icons {
+    color: white;
+}
+
+/* ===== CITY AND DATE SECTION ===== */
+.city-date-section {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.city-date-section .city {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.city-date-section .date {
+    background-color: var(--accent-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ===== TEMPERATURE SECTION ===== */
+.temperature-info {
+    margin: 24px 0;
+    text-align: center;
+}
+
+.temperature-info .temp {
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1;
+    margin: 10px 0;
+    position: relative;
+}
+
+.temperature-info .temp::after {
+    content: '';
+    position: absolute;
+    font-size: 2rem;
+    top: 10px;
+}
+
+.temperature-info .description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.temperature-info .description i {
+    font-size: 1.8rem;
+}
+
+.temperature-info .description span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* ===== WEATHER METRICS ===== */
+.additional-info {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.wind-info,
+.humidity-info,
+.visibility-info {
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    padding: 16px 12px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.wind-info:hover,
+.humidity-info:hover,
+.visibility-info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.material-icons {
+    font-size: 2.2rem;
+    margin-bottom: 6px;
+    color: var(--primary-color);
+}
+
+.wind-info h3,
+.humidity-info h3,
+.visibility-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.wind-info p,
+.humidity-info p,
+.visibility-info p {
+    font-size: 0.85rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 480px) {
+    .weather-app {
+        padding: 24px;
+    }
+    
+    .additional-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .temperature-info .temp {
+        font-size: 3.5rem;
+    }
+}

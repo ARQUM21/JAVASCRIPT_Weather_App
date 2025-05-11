@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Forecast App </title>
+</head>
+
+<body>
+    <main class="weather-app" role="main">
+        <form class="search-form" action="#" method="get" aria-label="City search form">
+            <input 
+                class="city-input" 
+                type="text" 
+                placeholder="Enter City Name"
+                aria-label="Enter city name"
+                required
+            >
+            <button class="search-btn" type="submit" aria-label="Search weather">
+                <i class="material-icons" aria-hidden="true">search</i>
+            </button>
+        </form>
+
+        <!-- Current location and date section -->
+        <section class="city-date-section" aria-labelledby="city-heading">
+            <h1 class="city" id="city-heading">Karachi</h1>
+            <time class="date" datetime="2024-07-12">12 July 2024</time>
+        </section>
+
+        <!-- Primary weather information -->
+        <section class="temperature-info" aria-labelledby="weather-condition">
+            <div class="description">
+                <i class="material-icons" aria-hidden="true">wb_sunny</i>
+                <span class="description-text" id="weather-condition">Sunny</span>
+            </div>
+            <div class="temp">
+                <span aria-label="Current temperature">20</span>
+                <sup aria-hidden="true">°C</sup>
+            </div>
+        </section>
+
+        <!-- Secondary weather metrics -->
+        <section class="additional-info" aria-label="Weather details">
+            <!-- Wind information card -->
+            <article class="weather-card wind-info" aria-label="Wind information">
+                <i class="material-icons" aria-hidden="true">air</i>
+                <div>
+                    <h3 class="wind-speed">4 KM/H</h3>
+                    <p class="wind-label">Wind Speed</p>
+                </div>
+            </article>
+
+            <!-- Humidity information card -->
+            <article class="weather-card humidity-info" aria-label="Humidity information">
+                <i class="material-icons" aria-hidden="true">water_drop</i>
+                <div>
+                    <h3 class="humidity">45%</h3>
+                    <p class="humidity-label">Humidity</p>
+                </div>
+            </article>
+
+            <!-- Visibility information card -->
+            <article class="weather-card visibility-info" aria-label="Visibility information">
+                <i class="material-icons" aria-hidden="true">visibility</i>
+                <div>
+                    <h3 class="visibility-distance">4 KM</h3>
+                    <p class="visibility-label">Visibility</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    
+    <script src="weather.js" ></script>
+</body>
+</html>
